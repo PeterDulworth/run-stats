@@ -15,7 +15,7 @@ The app requires the following environment variables for Strava integration:
 1. **Create a Strava App:**
    - Go to https://www.strava.com/settings/api
    - Create a new application
-   - Set the redirect URI to: `https://yourusername.github.io/activity-visualization/`
+   - Set the redirect URI to: `https://peterdulworth.github.io/run-stats/`
    - Note your Client ID and Client Secret
 
 2. **Create Local Environment File:**
@@ -23,7 +23,7 @@ The app requires the following environment variables for Strava integration:
    # Create .env file in your project root
    STRAVA_CLIENT_ID=your_client_id
    STRAVA_CLIENT_SECRET=your_client_secret
-   STRAVA_REDIRECT_URI=https://yourusername.github.io/activity-visualization/
+   STRAVA_REDIRECT_URI=https://peterdulworth.github.io/run-stats/
    ```
 
 3. **Enable GitHub Pages:**
@@ -49,7 +49,6 @@ The deployment process:
 
 ## Important Notes
 
-- Replace `yourusername` with your actual GitHub username in the redirect URI
 - The redirect URI in your Strava app settings must exactly match the one in your environment variables
 - Environment variables must be set locally before building/deploying
 - After deployment, it may take a few minutes for GitHub Pages to update
@@ -61,4 +60,4 @@ The deployment process:
 - `npm run build` - Build for production
 - `npm run deploy` - Build and deploy to GitHub Pages
 
-Your app will be available at: `https://yourusername.github.io/activity-visualization/` 
+Your app will be available at: `https://peterdulworth.github.io/run-stats/` 

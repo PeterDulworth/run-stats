@@ -69,9 +69,9 @@ class StravaService {
   private redirectUri: string;
 
   constructor() {
-    this.clientId = import.meta.env.STRAVA_CLIENT_ID || '';
-    this.clientSecret = import.meta.env.STRAVA_CLIENT_SECRET || '';
-    this.redirectUri = import.meta.env.STRAVA_REDIRECT_URI || '';
+    this.clientId = import.meta.env.VITE_STRAVA_CLIENT_ID || '';
+    this.clientSecret = import.meta.env.VITE_STRAVA_CLIENT_SECRET || '';
+    this.redirectUri = import.meta.env.VITE_STRAVA_REDIRECT_URI || '';
   }
 
   // Generate authorization URL
