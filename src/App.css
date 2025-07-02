@@ -1204,21 +1204,6 @@ body {
     min-width: 250px;
   }
 
-  .setup-instructions {
-    padding: 25px;
-    margin-top: 40px;
-  }
-
-  .setup-instructions h3 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-
-  .setup-instructions li {
-    margin-bottom: 12px;
-    font-size: 1rem;
-  }
-
   /* Enhanced callback components for desktop */
   .callback-processing,
   .callback-success,

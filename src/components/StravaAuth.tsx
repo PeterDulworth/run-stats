@@ -34,15 +34,6 @@ const StravaAuth: React.FC<StravaAuthProps> = ({ onAuthStart }) => {
           <span>🔗</span>
           Connect with Strava
         </button>
-        
-        <div className="setup-instructions">
-          <h3>Setup Instructions:</h3>
-          <ol>
-            <li>Register your app at <a href="https://www.strava.com/settings/api" target="_blank" rel="noopener noreferrer">Strava API Settings</a></li>
-            <li>Set your Authorization Callback Domain to: <code>localhost</code></li>
-            <li>Update your <code>.env</code> file with your Client ID and Secret</li>
-          </ol>
-        </div>
       </div>
     </div>
   );
