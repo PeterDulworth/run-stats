@@ -1,5 +1,4 @@
 import React from 'react';
-import { stravaService } from '../services/stravaService';
 import type { StravaActivity } from '../services/stravaService';
 import type { WeekData } from '../types';
 import TimeNavigation from './TimeNavigation';
