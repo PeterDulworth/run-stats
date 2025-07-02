@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { stravaService, ACTIVITY_TYPES } from './services/stravaService';
 import StravaAuth from './components/StravaAuth';
 import AuthCallback from './components/AuthCallback';
