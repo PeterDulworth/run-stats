@@ -12,40 +12,27 @@ The app requires the following environment variables for Strava integration:
 
 ## Setup Instructions
 
-1. **Create a Strava App:**
+1. **Update Strava callback domain:**
    - Go to https://www.strava.com/settings/api
-   - Create a new application
-   - Set the redirect URI to: `https://peterdulworth.github.io/run-stats/`
-   - Note your Client ID and Client Secret
+   - Edit your application
+   - Set the *Authorization Callback Domain* to: `peterdulworth.github.io`
 
-2. **Create Local Environment File:**
+2. **Configure local env files:**
+   
+   Make sure your `.env.local` file does not specify a `STRAVA_REDIRECT_URI`. It should look something like:
    ```bash
-   # Create .env file in your project root
-   STRAVA_CLIENT_ID=your_client_id
-   STRAVA_CLIENT_SECRET=your_client_secret
-   STRAVA_REDIRECT_URI=https://peterdulworth.github.io/run-stats/
-   ```
+   # Strava API Configuration
+   VITE_STRAVA_CLIENT_SECRET=...
 
-3. **Enable GitHub Pages:**
-   - Go to repository Settings → Pages
-   - Source: "Deploy from a branch"
-   - Branch: `gh-pages`
-   - Folder: `/ (root)`
-   - Save
+   # YOU MUST COMMENT THIS OUT BEFORE DEPLOYING
+   # VITE_STRAVA_REDIRECT_URI=http://localhost:5173/auth/callback
+   ```
 
 4. **Deploy:**
    ```bash
    # Build and deploy to gh-pages branch
    npm run deploy
    ```
-
-## Deployment Workflow
-
-The deployment process:
-1. Builds the React app with Vite
-2. Creates/updates the `gh-pages` branch
-3. Pushes the built files to the `gh-pages` branch
-4. GitHub Pages serves the site from that branch
 
 ## Important Notes
 
@@ -54,10 +41,5 @@ The deployment process:
 - After deployment, it may take a few minutes for GitHub Pages to update
 - The `gh-pages` branch is automatically managed - don't edit it manually
 
-## Commands
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run deploy` - Build and deploy to GitHub Pages
 
 Your app will be available at: `https://peterdulworth.github.io/run-stats/` 

@@ -1,5 +1,7 @@
 # Strava Activity Visualization
 
+Try it out: https://peterdulworth.github.io/run-stats/
+
 A React TypeScript application for visualizing your running activities from Strava.
 
 ## Running Locally
@@ -17,15 +19,23 @@ A React TypeScript application for visualizing your running activities from Stra
 
 3. Record your `client_id` and `client_secret`.
 
+Or, if you already have an app, make sure the callback domain is pointed to `localhost`:
+
+1. **Update Strava callback domain:**
+   - Go to https://www.strava.com/settings/api
+   - Edit your application
+   - Set the *Authorization Callback Domain* to: `localhost`
+
 ### 2. Configure Environment Variables
 
-Create a `.env` file in the project root:
+Create a `.env.local` file in the project root (ignored by git):
 
 ```env
 # Strava API Configuration
-STRAVA_CLIENT_ID=YOUR_CLIENT_ID_HERE
-STRAVA_CLIENT_SECRET=YOUR_CLIENT_SECRET_HERE
-STRAVA_REDIRECT_URI=http://localhost:5173/auth/callback
+VITE_STRAVA_CLIENT_SECRET=...
+
+# YOU MUST COMMENT THIS OUT BEFORE DEPLOYING
+VITE_STRAVA_REDIRECT_URI=http://localhost:5173/auth/callback
 ```
 
 Replace `YOUR_CLIENT_ID_HERE` and `YOUR_CLIENT_SECRET_HERE` with your actual Strava API credentials.
@@ -43,6 +53,17 @@ npm run dev
 ```
 
 The app will be available at `http://localhost:5173`
+
+## Deploying
+
+See [DEPLOYMENT.md](DEPLOYMENT.md)
+
+## Commands
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run deploy` - Build and deploy to GitHub Pages
+
 
 ## How It Works
 
