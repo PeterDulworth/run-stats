@@ -1,6 +1,6 @@
 # Deployment to GitHub Pages
 
-This app is configured to deploy automatically to GitHub Pages using GitHub Actions.
+This app is configured to deploy to GitHub Pages using branch-based deployment.
 
 ## Environment Variables
 
@@ -18,40 +18,47 @@ The app requires the following environment variables for Strava integration:
    - Set the redirect URI to: `https://yourusername.github.io/activity-visualization/`
    - Note your Client ID and Client Secret
 
-2. **Configure GitHub Repository:**
-   - Go to your repository Settings → Secrets and variables → Actions
-   - Add the following repository secrets:
-     - `STRAVA_CLIENT_ID`: Your Strava Client ID
-     - `STRAVA_CLIENT_SECRET`: Your Strava Client Secret
-     - `STRAVA_REDIRECT_URI`: `https://yourusername.github.io/activity-visualization/`
-
-3. **Enable GitHub Pages:**
-   - Go to repository Settings → Pages
-   - Source: "GitHub Actions"
-   - The app will deploy automatically when you push to main
-
-4. **Manual Deployment (Alternative):**
+2. **Create Local Environment File:**
    ```bash
-   # Set environment variables in your local .env file
+   # Create .env file in your project root
    STRAVA_CLIENT_ID=your_client_id
    STRAVA_CLIENT_SECRET=your_client_secret
    STRAVA_REDIRECT_URI=https://yourusername.github.io/activity-visualization/
-   
-   # Deploy manually
+   ```
+
+3. **Enable GitHub Pages:**
+   - Go to repository Settings → Pages
+   - Source: "Deploy from a branch"
+   - Branch: `gh-pages`
+   - Folder: `/ (root)`
+   - Save
+
+4. **Deploy:**
+   ```bash
+   # Build and deploy to gh-pages branch
    npm run deploy
    ```
+
+## Deployment Workflow
+
+The deployment process:
+1. Builds the React app with Vite
+2. Creates/updates the `gh-pages` branch
+3. Pushes the built files to the `gh-pages` branch
+4. GitHub Pages serves the site from that branch
 
 ## Important Notes
 
 - Replace `yourusername` with your actual GitHub username in the redirect URI
 - The redirect URI in your Strava app settings must exactly match the one in your environment variables
+- Environment variables must be set locally before building/deploying
 - After deployment, it may take a few minutes for GitHub Pages to update
+- The `gh-pages` branch is automatically managed - don't edit it manually
 
-## GitHub Actions Workflow
+## Commands
 
-The deployment is automated via `.github/workflows/deploy.yml` which:
-- Triggers on pushes to main branch
-- Builds the React app
-- Deploys to GitHub Pages automatically
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run deploy` - Build and deploy to GitHub Pages
 
 Your app will be available at: `https://yourusername.github.io/activity-visualization/` 
