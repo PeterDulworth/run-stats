@@ -1,8 +1,6 @@
-# 🏃‍♂️ Strava Activity Visualization
+# Strava Activity Visualization
 
 A React TypeScript application for visualizing your running activities from Strava.
-
-## ⚠️ Important Notice - Recent Strava API Changes
 
 **Due to Strava's API policy changes (November 2024), this application has significant limitations:**
 
@@ -12,7 +10,6 @@ A React TypeScript application for visualizing your running activities from Stra
 - ❌ Cannot aggregate data across multiple users
 - ❌ Many third-party integrations are now broken
 
-**Recommendation:** Consider using [Garmin Connect API](https://developer.garmin.com/gc-developer-program/) instead for more stable, business-friendly data access.
 
 ## 🚀 Getting Started
 
